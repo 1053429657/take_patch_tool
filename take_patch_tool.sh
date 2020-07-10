@@ -21,7 +21,7 @@ do
  echo $patch_dir_name
  	tmp_patch_dir=$(echo ${patch_dir_name%/*})
  	echo $CURREN_PATH
-	cd $CURREN_PATH/$tmp_patch_dir && git am --ignore-date --reject $CURREN_PATH/$patch_dir_name && rm $CURREN_PATH/$patch_dir_name
+	cd $CURREN_PATH/$tmp_patch_dir && git am --ignore-date --binary --reject $CURREN_PATH/$patch_dir_name && rm $CURREN_PATH/$patch_dir_name
  	if [ $? -ne 0 ]
  	then
 		git am --abort
