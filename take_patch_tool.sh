@@ -8,7 +8,7 @@ SUCCESS_PATCH_NAME=patch_success.txt
 FAIL_PATCH_NAME=patch_fail.txt
 mkdir -p $tmp_out_dir
 patch_name_suffix=bulletin.patch
-find -name *.${patch_name_suffix} | sort > $tmp_out_dir/$fileName.patch
+find -name "*.${patch_name_suffix}" | sort > $tmp_out_dir/$fileName.patch
 cat $tmp_out_dir/$fileName.patch | xargs > $tmp_out_dir/${fileName}_bak.patch
 patch_file_name=$(cat $tmp_out_dir/${fileName}_bak.patch)
 if [ -z $patch_file_name ]
